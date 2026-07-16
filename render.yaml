@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: trusted-data-sell-bot
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install wheel
+      pip install -r requirements.txt
+    startCommand: python bot2.py
+    envVars:
+      - key: BOT_TOKEN
+        value: 8654900684:AAE4QjXUsYsqfekp8nQWDXtqGkmHz8Yc_Dg
+      - key: ADMIN_ID
+        value: 7998643430
+      - key: CHANNEL_USERNAME
+        value: trusteddatasellupdate
+      - key: RENDER
+        value: true
+    plan: free
+    region: singapore
+    runtime: python3.11
+    autoDeploy: true
